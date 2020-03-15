@@ -1,0 +1,11 @@
+.container {
+  padding: 25px;
+}
+.button {
+  margin-top: 20px;
+}
+
+div{
+  width: auto;  
+  word-break: break-all;
+}

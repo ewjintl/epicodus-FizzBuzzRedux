@@ -1,22 +1,28 @@
+//BACKEND
+var numbers = [];
 function range(num) {
-    var numbers = [];
-    for (i=1; i<=num; i++) {
-      numbers.push(i);
-    }
-    return numbers;
-  }
-  
-  var doubledNumbers = range(5000).map(function(number) {
-    if ((number%2 === 0) && (number%3 === 0)) {
-    return number = "fizzBuzz";
-    } else if (number%2 === 0) {
-    return number = "fizz";
-    } else if (number%3 === 0) {
-    return number = "buzz";
+  for (i=0; i<=num; i++) {
+    numbers.push(" " + i);
+    if ((numbers[i]).includes("3")) {
+      numbers[i] = ("Won't you be my neighbor?");
+    } else if ((numbers[i]).includes("2")) {
+      numbers[i] = ("Boop!");
+    } else if ((numbers[i]).includes("1")) {
+      numbers[i] = ("Beep!");
     } else 
-      return number;
-  });
-  
-  console.log(doubledNumbers);
-  
-  
+      numbers[i];
+  }
+  return numbers;
+};
+
+// UX
+$(document).ready(function() {
+  $("form#userInput").submit(function(event) {
+    event.preventDefault();
+    var num = parseInt($("#userEndNumber").val());
+    console.log(num);
+    $("#output").text(range(num));
+  })
+})
+
+
